@@ -101,7 +101,7 @@ func getRootServers() []net.IP {
 	rootServers := []net.IP{}
 
 	// Parsing the Root servers' IP to a readable format
-	for _, rootServer := range strings.Split(ROOT_SERVERS_KE, ",") {
+	for _, rootServer := range strings.Split(ROOT_SERVERS, ",") {
 		rootServers = append(rootServers, net.ParseIP(rootServer))
 	}
 	return rootServers
