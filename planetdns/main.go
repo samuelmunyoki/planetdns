@@ -43,7 +43,8 @@ func main (){
 			continue
 		}
 		//fmt.Printf("Read %v bytes \n", n)
-		if n != nil{
+		if n != 0{
+			continue
 			//To silence unread 			
 		}
 
