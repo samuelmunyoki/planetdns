@@ -42,7 +42,10 @@ func main (){
 			fmt.Printf("error reading packet %v from %v", err, addr)
 			continue
 		}
-		fmt.Printf("Read %v bytes \n", n)
+		//fmt.Printf("Read %v bytes \n", n)
+		if n < 0 {
+			fmt.Println("No bytes read")
+		}
 		
 		// Handling the DNS request
 		go handlePacket(packetConnection, addr, buf)
