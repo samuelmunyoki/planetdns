@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"net"
 	"strings"
+	"math/big"
 
 	"golang.org/x/net/dns/dnsmessage"
 )
