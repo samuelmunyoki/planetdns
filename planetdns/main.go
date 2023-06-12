@@ -42,7 +42,7 @@ func main (){
 			fmt.Printf("error reading packet %v from %v", err, addr)
 			continue
 		}
-		fmt.Printf("Read %v bytes \n", n)
+		//fmt.Printf("Read %v bytes \n", n)
 
 
 		// Handling the DNS request
@@ -51,7 +51,7 @@ func main (){
 	}
 }
 func handlePacket(pc net.PacketConn, addr net.Addr, buf []byte) error{
-	fmt.Println("Handling DNS packet.")
+	//fmt.Println("Handling DNS packet.")
 
 	// Creating a Parser for the DNS request
 	p := dnsmessage.Parser{}
