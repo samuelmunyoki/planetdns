@@ -43,6 +43,9 @@ func main (){
 			continue
 		}
 		//fmt.Printf("Read %v bytes \n", n)
+		if n == nil{
+			//To silence unread 			
+		}
 
 
 		// Handling the DNS request
