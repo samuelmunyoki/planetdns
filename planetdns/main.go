@@ -108,7 +108,8 @@ func getRootServers() []net.IP {
 }
 
 func outgoingDnsQuery (servers []net.IP, question dnsmessage.Question)(*dnsmessage.Parser, *dnsmessage.Header, error){
-	uid, err := randomUint16()
+	max := ^uint16(0)
+	randomNumber, err := rand.Int(rand.Reader, big.NewInt(int64(max)))
 
 	if err != nil{
 		return nil, nil, err
@@ -116,7 +117,7 @@ func outgoingDnsQuery (servers []net.IP, question dnsmessage.Question)(*dnsmessa
 	// Building the DNS question
 	dnsq := dnsmessage.Message{
 		Header: dnsmessage.Header{
-			ID: *uid,
+			ID: uint16(randomNumber.Int64()),
 			Response: false,
 			OpCode: dnsmessage.OpCode(0),
 		},
