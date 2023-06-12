@@ -193,7 +193,7 @@ func outgoingDnsQuery (servers []net.IP, question dnsmessage.Question)(*dnsmessa
 
 
 func handleQuery(servers []net.IP, question dnsmessage.Question)(*dnsmessage.Message, error )  {
-		fmt.Printf("Question: %+v\n", question)
+		// fmt.Printf("Question: %+v\n", question)
 
 	for i := 0; i < 3; i++ {
 		dnsAnswer, header, err := outgoingDnsQuery(servers, question)
@@ -247,7 +247,7 @@ func handleQuery(servers []net.IP, question dnsmessage.Question)(*dnsmessage.Mes
 			return nil, err
 		}
 
-		fmt.Printf("Additionals: %v: \n\n", additionals)
+		// fmt.Printf("Additionals: %v: \n\n", additionals)
 
 		// Setting the false to later determine if NS were got
 		newResolverServersFound := false
